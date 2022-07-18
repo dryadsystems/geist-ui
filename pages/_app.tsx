@@ -8,11 +8,13 @@ import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
 import { HybridCode, HybridLink, Search } from 'lib/components'
 import Menu from 'lib/components/layout/menu'
+import { SparklTheme } from 'components/sparkl-theme'
+import 'public/fonts/quicksand.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
-  const [themeType, setThemeType] = useState<string>()
-  const [customTheme, setCustomTheme] = useState<GeistUIThemes>(theme)
+  const [themeType, setThemeType] = useState<string>('sparkl')
+  const [customTheme, setCustomTheme] = useState<GeistUIThemes>(SparklTheme)
   const themeChangeHandle = (theme: GeistUIThemes) => {
     setCustomTheme(theme)
     setThemeType(theme.type)
