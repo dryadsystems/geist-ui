@@ -1,6 +1,6 @@
 {
   "name": "sparkl-ui",
-  "version": "2.3.9",
+  "version": "2.4.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -29,11 +29,11 @@
   "description": "Modern and minimalist React UI library.",
   "homepage": "",
   "bugs": {
-    "url": "https://github.com/dryadsystems/geist-ui/issues/new/choose"
+    "url": "https://github.com/dryadsystems/sparkl-ui/issues/new/choose"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dryadsystems/geist-ui.git"
+    "url": "git+https://github.com/dryadsystems/sparkl-ui.git"
   },
   "prettier": "@geist-ui/prettier-config",
   "keywords": [
