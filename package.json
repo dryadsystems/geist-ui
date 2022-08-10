@@ -22,7 +22,7 @@
     "build:babel": "babel --no-babelrc --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./components --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
     "build:after": "node scripts/move-built-in.js",
     "build:types": "ttsc -p ./scripts & ttsc -p ./scripts --outDir ./esm",
-    "build": "yarn build:clear && yarn build:rollup && yarn build:babel && yarn build:types && yarn build:after",
+    "build": "next build",
     "release": "yarn build && yarn publish --access public --non-interactive"
   },
   "license": "MIT",
