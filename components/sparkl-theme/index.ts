@@ -37,7 +37,7 @@ const palette: GeistUIThemesPalette = {
   warningDark: c.yellowA.yellowA10,
   cyan: c.blueA.blueA7,
   cyanLighter: c.blueA.blueA5,
-  cyanlight: c.blueA.blueA6,
+  cyanLight: c.blueA.blueA6,
   cyanDark: c.blueA.blueA8,
   violet: c.plumA.plumA9,
   violetLighter: c.plumA.plumA6,
