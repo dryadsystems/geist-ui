@@ -1,11 +1,10 @@
 import {
   //   GeistUIThemes,
   GeistUIThemesPalette,
-  //   GeistUIThemesExpressiveness,
+  GeistUIThemesExpressiveness,
   GeistUIThemesLayout,
   GeistUIThemesFont,
 } from 'components/themes'
-import { expressiveness } from 'components/themes/presets/default'
 import { defaultLayout } from 'components/themes/presets/shared'
 import { Themes } from '..'
 import * as c from './radix-colors'
