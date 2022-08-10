@@ -35,7 +35,7 @@ const HomeCell: React.FC<HomeCellProps> = ({ url, title, desc, icon }) => {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(#3291ff, #0761d1);
+            background: linear-gradient(${theme.palette.success}, ${theme.palette.successDark});
             color: #fff;
             border-radius: 2rem;
           }

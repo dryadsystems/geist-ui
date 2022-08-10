@@ -9,7 +9,7 @@ import useDomClean from 'lib/use-dom-clean'
 import { HybridCode, HybridLink, Search } from 'lib/components'
 import Menu from 'lib/components/layout/menu'
 import { SparklTheme } from 'components/sparkl-theme'
-import 'public/fonts/quicksand.css'
+import 'public/fonts/moriston.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
@@ -30,7 +30,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>Geist UI - Modern and minimalist React UI library</title>
+        <title>Sparkl UI - Modern and minimalist React UI library</title>
         <meta name="google" content="notranslate" />
         <meta name="twitter:creator" content="@echo_witt" />
         <meta name="referrer" content="strict-origin" />

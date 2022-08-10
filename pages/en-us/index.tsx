@@ -13,9 +13,9 @@ const Application: NextPage<{}> = () => {
     <>
       <div className="layout">
         <div className="hero">
-          <h1 className="title">Geist</h1>
-          <h3 className="desc">
-            An open source design system for building modern websites and applications.
+          <h1 className="title" color={theme.palette.success}>Sparkl</h1>
+          <h3 className="desc" color={theme.palette.success}>
+            Generate images with AI
           </h3>
         </div>
 
