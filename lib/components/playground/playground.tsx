@@ -49,7 +49,7 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
             .playground {
               width: 100%;
               border-radius: ${theme.layout.radius};
-              border: 1px solid ${theme.palette.accents_2};
+              border: 2px solid ${theme.palette.accents_5};
             }
           `}</style>
         </div>
