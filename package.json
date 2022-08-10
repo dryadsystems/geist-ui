@@ -1,6 +1,6 @@
 {
-  "name": "@geist-ui/core",
-  "version": "2.3.8",
+  "name": "sparkl-ui",
+  "version": "2.3.9",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -22,18 +22,18 @@
     "build:babel": "babel --no-babelrc --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./components --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
     "build:after": "node scripts/move-built-in.js",
     "build:types": "ttsc -p ./scripts & ttsc -p ./scripts --outDir ./esm",
-    "build": "next build",
+    "build": "yarn build:clear && yarn build:rollup && yarn build:babel && yarn build:types && yarn build:after && next build",
     "release": "yarn build && yarn publish --access public --non-interactive"
   },
   "license": "MIT",
   "description": "Modern and minimalist React UI library.",
-  "homepage": "https://geist-ui.dev",
+  "homepage": "",
   "bugs": {
-    "url": "https://github.com/geist-org/geist-ui/issues/new/choose"
+    "url": "https://github.com/dryadsystems/geist-ui/issues/new/choose"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/geist-org/geist-ui"
+    "url": "git+https://github.com/dryadsystems/geist-ui.git"
   },
   "prettier": "@geist-ui/prettier-config",
   "keywords": [
@@ -103,10 +103,17 @@
     "typescript-transform-paths": "^3.3.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.7"
+    "@babel/runtime": "^7.16.7",
+    "esm": "^3.2.25"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
-  }
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "author": ""
 }
