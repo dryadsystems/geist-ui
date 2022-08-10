@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextPage } from 'next'
-import { useTheme, Grid } from 'components'
+import { useTheme, Grid, Image } from 'components'
 import PackageIcon from '@geist-ui/icons/package'
 import FeatherIcon from '@geist-ui/icons/feather'
 import GitHubIcon from '@geist-ui/icons/github'
@@ -13,6 +13,14 @@ const Application: NextPage<{}> = () => {
     <>
       <div className="layout">
         <div className="hero">
+          <Image
+            src="/images/logo.png"
+            width="100px"
+            height="100px"
+            draggable={false}
+            title="Logo"
+            style={{ "borderRadius": "48%" }}
+          />
           <h1 className="title" color={theme.palette.success}>Sparkl</h1>
           <h3 className="desc" color={theme.palette.success}>
             Generate images with AI

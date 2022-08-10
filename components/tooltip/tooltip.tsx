@@ -37,7 +37,7 @@ const defaultProps = {
   offset: 12,
   className: '',
   portalClassName: '',
-  onVisibleChange: (() => {}) as TooltipOnVisibleChange,
+  onVisibleChange: (() => { }) as TooltipOnVisibleChange,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>

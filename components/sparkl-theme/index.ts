@@ -2,11 +2,28 @@ import {
   //   GeistUIThemes,
   GeistUIThemesPalette,
   //   GeistUIThemesExpressiveness,
-  //   GeistUIThemesLayout,
+  GeistUIThemesLayout,
   GeistUIThemesFont,
 } from 'components/themes'
+import { expressiveness } from 'components/themes/presets/default'
+import { defaultLayout } from 'components/themes/presets/shared'
 import { Themes } from '..'
 import * as c from './radix-colors'
+
+const layout: GeistUIThemesLayout = defaultLayout
+layout.radius = '2px'
+
+export const expressiveness: GeistUIThemesExpressiveness = {
+  linkStyle: 'none',
+  linkHoverStyle: 'none',
+  dropdownBoxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.02)',
+  scrollerStart: 'rgba(255, 255, 255, 1)',
+  scrollerEnd: 'rgba(255, 255, 255, 0)',
+  shadowSmall: '2px 4px 0 rgba(0, 0, 0, 0.7)',
+  shadowMedium: '4px 6px 0 rgba(0, 0, 0, 0.6)',
+  shadowLarge: '8px 10px 0 rgba(0, 0, 0, 0.5)',
+  portalOpacity: 0.25,
+}
 
 const palette: GeistUIThemesPalette = {
   accents_1: c.mauve.mauve3,
@@ -22,7 +39,7 @@ const palette: GeistUIThemesPalette = {
   selection: c.blueA.blueA9,
   secondary: c.mauve.mauve11,
   code: c.crimsonA.crimsonA10,
-  border: c.mauve.mauve4,
+  border: c.mauve.mauve9,
   error: c.redA.redA9,
   errorLight: c.redA.redA7,
   errorLighter: c.redA.redA5,
@@ -61,4 +78,6 @@ export const SparklTheme = Themes.createFromLight({
   type: 'sparkl',
   palette: palette,
   font: font,
+  layout: layout,
+  expressiveness: expressiveness,
 })

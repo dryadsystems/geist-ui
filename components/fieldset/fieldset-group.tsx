@@ -112,7 +112,7 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
             overflow: hidden;
             transition: all 0.2s ease 0s;
             border-radius: 0;
-            border: 1px solid ${theme.palette.border};
+            border: 2px solid ${theme.palette.border};
             text-decoration: none;
             outline: none;
           }

@@ -94,15 +94,15 @@ const Menu: React.FC<unknown> = () => {
             <div className="logo">
               <NextLink href={`/${locale}`}>
                 <a aria-label="Go Home">
-                  {/* <Image
+                  <Image
                     src="/images/logo.png"
                     width="20px"
                     height="20px"
                     mr={0.5}
                     draggable={false}
                     title="Logo"
-                  /> */}
-                  ✨ Sparkl
+                  />
+                  Sparkl
                 </a>
               </NextLink>
             </div>
