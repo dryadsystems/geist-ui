@@ -170,7 +170,10 @@ const ButtonComponent = React.forwardRef<
             overflow: hidden;
             color: ${color};
             background-color: ${bg};
-            border: 1px solid ${border};
+            border-top: 1px solid ${border};
+            border-right: 2px solid ${border};
+            border-bottom: 2px solid ${border};
+            border-left: 1px solid ${border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};

@@ -73,7 +73,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             user-select: none;
             display: flex;
             align-items: center;
-            font-size: ${SCALES.font(0.875)};
+            font-size: ${SCALES.font(1.325)};
             line-height: normal;
             width: ${SCALES.width(1, 'auto')};
             height: ${SCALES.height(1, 'auto')};
@@ -114,6 +114,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           }
           .active {
             color: ${theme.palette.foreground};
+            font-weight: 500;
           }
           .disabled {
             color: ${theme.palette.accents_3};

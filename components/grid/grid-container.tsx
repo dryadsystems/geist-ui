@@ -31,7 +31,6 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
   const { className: resolveClassName, styles } = css.resolve`
     div {
       --grid-gap-unit: ${gapUnit};
-      --grid-container-margin: calc(-1 * var(--grid-gap-unit));
       --grid-container-width: calc(100% + var(--grid-gap-unit) * 2);
       display: flex;
       flex-wrap: ${wrap};

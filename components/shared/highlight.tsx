@@ -51,7 +51,7 @@ const Highlight: React.FC<HighlightProps> = ({
     <div ref={ref} className={useClasses('highlight', className)} {...props}>
       <style jsx>{`
         .highlight {
-          background: ${theme.palette.accents_2};
+          background: ${theme.palette.successLight};
           position: absolute;
           border-radius: 5px;
           width: ${position.width};

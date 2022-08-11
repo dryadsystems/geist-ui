@@ -73,7 +73,7 @@ export const NoteComponent: React.FC<React.PropsWithChildren<NoteProps>> = ({
       <style jsx>{`
         .note {
           line-height: 1.8;
-          border: 1px solid ${borderColor};
+          border: 1px dashed ${borderColor};
           color: ${color};
           background-color: ${bgColor};
           border-radius: ${theme.layout.radius};
