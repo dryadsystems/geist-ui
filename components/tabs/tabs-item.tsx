@@ -90,12 +90,12 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           .tab:after {
             position: absolute;
             content: '';
-            bottom: -1px;
+            top: -1px;
             left: 0;
             right: 0;
             width: 100%;
             height: 2px;
-            border-radius: 4px;
+            border-radius: 2px;
             transform: scaleX(0.75);
             background-color: ${theme.palette.foreground};
             transition: opacity, transform 200ms ease-in;
@@ -114,7 +114,6 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           }
           .active {
             color: ${theme.palette.foreground};
-            font-weight: 500;
           }
           .disabled {
             color: ${theme.palette.accents_3};
