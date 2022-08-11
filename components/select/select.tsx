@@ -55,7 +55,7 @@ const defaultProps = {
   clearable: true,
   className: '',
   disableMatchWidth: false,
-  onDropdownVisibleChange: () => {},
+  onDropdownVisibleChange: () => { },
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -228,11 +228,11 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             getPopupContainer={getPopupContainer}>
             {children}
           </SelectDropdown>
-          {!pure && (
+          {/* {!pure && (
             <div className="icon">
               <Icon />
             </div>
-          )}
+          )} */}
           <style jsx>{`
             .select {
               display: inline-flex;
@@ -249,8 +249,8 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
               border-radius: ${theme.layout.radius};
 
               background-color: ${disabled
-                ? theme.palette.accents_1
-                : theme.palette.background};
+              ? theme.palette.accents_1
+              : theme.palette.background};
               --select-font-size: ${SCALES.font(0.875)};
               --select-height: ${SCALES.height(2.25)};
               min-width: 11.5em;
