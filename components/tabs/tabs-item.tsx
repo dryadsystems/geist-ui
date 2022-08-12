@@ -90,7 +90,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           .tab:after {
             position: absolute;
             content: '';
-            top: -1px;
+            bottom: -1px;
             left: 0;
             right: 0;
             width: 100%;
