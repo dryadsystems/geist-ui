@@ -5,7 +5,7 @@ import { TableColumnRender, TableDataItemBase } from './table-types'
 
 const defaultProps = {
   className: '',
-  render: () => {},
+  render: () => { },
 }
 
 export type TableColumnProps<TableDataItem> = {
@@ -27,9 +27,9 @@ const TableColumn = <TableDataItem extends TableDataItemBase>(
     className,
     render: renderHandler,
   } = columnProps as React.PropsWithChildren<TableColumnProps<TableDataItem>> &
-    typeof defaultProps
+  typeof defaultProps
   const { updateColumn } = useTableContext<TableDataItem>()
-  const safeProp = `${prop}`.trim()
+  const safeProp = `${String(prop)}`.trim()
   if (!safeProp) {
     useWarning('The props "prop" is required.', 'Table.Column')
   }
