@@ -228,11 +228,11 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             getPopupContainer={getPopupContainer}>
             {children}
           </SelectDropdown>
-          {/* {!pure && (
+          {!pure && (
             <div className="icon">
               <Icon />
             </div>
-          )} */}
+          )}
           <style jsx>{`
             .select {
               display: inline-flex;
