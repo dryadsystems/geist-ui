@@ -65,7 +65,7 @@ const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
           font-size: calc(0.89 * var(--user-font-size));
           color: ${theme.palette.accents_8};
           line-height: 1.1em;
-          text-transform: capitalize;
+          /* text-transform: capitalize; */
           font-weight: 500;
           max-width: 15rem;
           text-overflow: ellipsis;
