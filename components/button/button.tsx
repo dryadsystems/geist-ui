@@ -188,8 +188,7 @@ const ButtonComponent = React.forwardRef<
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
-          .btn:hover,
-          .btn:focus {
+          .btn:hover{
             color: ${hover.color};
             --geist-ui-button-color: ${hover.color};
             background-color: ${hover.bg};
