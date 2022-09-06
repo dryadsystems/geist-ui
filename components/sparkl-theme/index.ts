@@ -1,14 +1,13 @@
 import {
-  //   GeistUIThemes,
-  GeistUIThemesPalette,
-  GeistUIThemesExpressiveness,
-  GeistUIThemesLayout,
-  GeistUIThemesFont,
   GeistUIThemesBreakpoints,
+  GeistUIThemesExpressiveness,
+  GeistUIThemesFont,
+  GeistUIThemesLayout,
+  GeistUIThemesPalette,
 } from 'components/themes'
 import { Themes } from '..'
-import * as c from './radix-colors'
 
+import * as c from './radix-colors'
 
 export const breakpoints: GeistUIThemesBreakpoints = {
   xs: {
@@ -45,25 +44,25 @@ export const layout: GeistUIThemesLayout = {
   pageWidthWithMargin: '782pt',
   breakpointMobile: breakpoints.xs.max,
   breakpointTablet: breakpoints.sm.max,
-  radius: '2px',
+  radius: '', // "2px",
   unit: '16px',
 }
 
 export const expressiveness: GeistUIThemesExpressiveness = {
   linkStyle: 'none',
-  linkHoverStyle: 'none',
-  dropdownBoxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.02)',
+  linkHoverStyle: 'underline',
   scrollerStart: 'rgba(255, 255, 255, 1)',
   scrollerEnd: 'rgba(255, 255, 255, 0)',
-  shadowSmall: '2px 4px 0 rgba(0, 0, 0, 0.7)',
-  shadowMedium: '4px 6px 0 rgba(0, 0, 0, 0.6)',
-  shadowLarge: '8px 10px 0 rgba(0, 0, 0, 0.5)',
+  dropdownBoxShadow: '', // "0 4px 4px 0 rgba(0, 0, 0, 0.02)",
+  shadowSmall: '', // "2px 4px 0 rgba(0, 0, 0, 0.3)",
+  shadowMedium: '', // "4px 6px 0 rgba(0, 0, 0, 0.3)",
+  shadowLarge: '', // "8px 10px 0 rgba(0, 0, 0, 0.3)",
   portalOpacity: 0.25,
 }
 
 const palette: GeistUIThemesPalette = {
-  accents_1: c.mauve.mauve3,
-  accents_2: c.mauve.mauve5,
+  accents_1: c.mauve.mauve2,
+  accents_2: c.mauve.mauve6,
   accents_3: c.mauve.mauve7,
   accents_4: c.mauve.mauve8,
   accents_5: c.mauve.mauve9,
@@ -72,34 +71,34 @@ const palette: GeistUIThemesPalette = {
   accents_8: c.mauve.mauve12,
   background: c.mauve.mauve1,
   foreground: c.mauve.mauve12,
-  selection: c.blueA.blueA9,
+  selection: c.yellow.yellow5,
   secondary: c.mauve.mauve11,
-  code: c.crimsonA.crimsonA10,
+  code: c.crimson.crimson10,
   border: c.mauve.mauve9,
-  error: c.redA.redA9,
-  errorLight: c.redA.redA7,
-  errorLighter: c.redA.redA5,
-  errorDark: c.redA.redA11,
-  success: c.violetA.violetA9,
-  successLight: c.violetA.violetA7,
-  successLighter: c.violetA.violetA5,
-  successDark: c.violetA.violetA11,
-  warning: c.yellowA.yellowA9,
-  warningLight: c.yellowA.yellowA6,
-  warningLighter: c.yellowA.yellowA4,
-  warningDark: c.yellowA.yellowA10,
-  cyan: c.blueA.blueA7,
-  cyanLighter: c.blueA.blueA5,
-  cyanLight: c.blueA.blueA6,
-  cyanDark: c.blueA.blueA8,
-  violet: c.plumA.plumA9,
-  violetLighter: c.plumA.plumA6,
-  violetLight: c.plumA.plumA8,
-  violetDark: c.plumA.plumA11,
-  purple: c.crimsonA.crimsonA8,
-  alert: c.crimsonA.crimsonA9,
-  magenta: c.crimsonA.crimsonA10,
-  link: c.blueA.blueA10,
+  error: c.red.red9,
+  errorLight: c.red.red7,
+  errorLighter: c.red.red5,
+  errorDark: c.red.red11,
+  success: c.violet.violet9,
+  successLight: c.violet.violet7,
+  successLighter: c.violet.violet5,
+  successDark: c.violet.violet11,
+  warning: c.yellow.yellow9,
+  warningLight: c.yellow.yellow6,
+  warningLighter: c.yellow.yellow4,
+  warningDark: c.yellow.yellow10,
+  cyan: c.blue.blue7,
+  cyanLighter: c.blue.blue5,
+  cyanLight: c.blue.blue6,
+  cyanDark: c.blue.blue8,
+  violet: c.plum.plum9,
+  violetLighter: c.plum.plum6,
+  violetLight: c.plum.plum8,
+  violetDark: c.plum.plum11,
+  purple: c.crimson.crimson8,
+  alert: c.crimson.crimson9,
+  magenta: c.crimson.crimson10,
+  link: c.violet.violet11,
 }
 
 export const font: GeistUIThemesFont = {
@@ -108,7 +107,6 @@ export const font: GeistUIThemesFont = {
   prism:
     'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono", "Courier New", monospace',
 }
-
 
 export const SparklTheme = Themes.createFromLight({
   type: 'sparkl',

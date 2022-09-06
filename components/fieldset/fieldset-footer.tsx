@@ -27,7 +27,7 @@ const FieldsetFooterComponent: React.FC<React.PropsWithChildren<FieldsetFooterPr
       <style jsx>{`
         footer {
           background-color: ${theme.palette.accents_1};
-          border-top: 1px solid ${theme.palette.border};
+          border-top: 1px dashed ${theme.palette.border};
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
           display: flex;
