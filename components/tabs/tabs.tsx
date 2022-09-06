@@ -6,17 +6,18 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import useTheme from '../use-theme'
-import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
-import useScale, { withScale } from '../use-scale'
 import Highlight from '../shared/highlight'
-import { useRect } from '../utils/layouts'
-import { isGeistElement } from '../utils/collections'
 import useClasses from '../use-classes'
+import useScale, { withScale } from '../use-scale'
+import useTheme from '../use-theme'
+import { isGeistElement } from '../utils/collections'
+import { useRect } from '../utils/layouts'
+import { TabsConfig, TabsContext, TabsHeaderItem } from './tabs-context'
 
 interface Props {
   initialValue?: string
   value?: string
+  stickyBottom?: boolean
   hideDivider?: boolean
   hideBorder?: boolean
   highlight?: boolean
@@ -40,6 +41,7 @@ const defaultProps = {
   activeClassName: '',
   activeStyle: {},
   align: 'left',
+  stickyBottom: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -48,6 +50,7 @@ export type TabsProps = Props & NativeAttrs
 const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue,
   value,
+  stickyBottom,
   hideDivider,
   hideBorder,
   children,
@@ -151,7 +154,12 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             overflow-y: hidden;
             overflow-x: scroll;
             scrollbar-width: none;
-            position: relative;
+            ${stickyBottom
+              ? `
+            position: fixed;
+            bottom: 0;
+            z-index: 1000`
+              : ` position: relative;`}
           }
           .scroll-container {
             width: 100%;

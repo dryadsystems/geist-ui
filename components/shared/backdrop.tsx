@@ -15,9 +15,9 @@ interface Props {
 }
 
 const defaultProps = {
-  onClick: () => {},
+  onClick: () => { },
   visible: false,
-  onContentClick: () => {},
+  onContentClick: () => { },
   backdropClassName: '',
   positionClassName: '',
   layerClassName: '',
@@ -83,7 +83,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               position: relative;
               z-index: 1001;
               outline: none;
-              max-width: 90%;
+              max-width: 100%;
               width: ${width};
               margin: 20px auto;
               vertical-align: middle;
