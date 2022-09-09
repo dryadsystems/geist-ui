@@ -48,8 +48,8 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
 
         .icon :global(svg) {
           background: transparent;
-          height: calc(var(--geist-ui-button-height) / 2.35);
-          width: calc(var(--geist-ui-button-height) / 2.35);
+          height: calc(var(--geist-ui-button-height) / 1.12);
+          width: calc(var(--geist-ui-button-height) / 1.12);
         }
 
         .single {
