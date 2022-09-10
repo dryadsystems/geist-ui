@@ -107,7 +107,7 @@ const ButtonComponent = React.forwardRef<
 
     const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
       if (disabled || loading) return
-      const showDrip = !shadow && !ghost && effect
+      const showDrip = !shadow && effect
       /* istanbul ignore next */
       if (showDrip && buttonRef.current) {
         const rect = buttonRef.current.getBoundingClientRect()
@@ -188,7 +188,7 @@ const ButtonComponent = React.forwardRef<
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
-          .btn:hover{
+          .btn:hover {
             color: ${hover.color};
             --geist-ui-button-color: ${hover.color};
             background-color: ${hover.bg};
