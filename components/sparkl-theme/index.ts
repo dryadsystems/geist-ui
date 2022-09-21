@@ -6,7 +6,6 @@ import {
   GeistUIThemesPalette,
 } from 'components/themes'
 import { Themes } from '..'
-
 import * as c from './radix-colors'
 
 export const breakpoints: GeistUIThemesBreakpoints = {
@@ -44,7 +43,7 @@ export const layout: GeistUIThemesLayout = {
   pageWidthWithMargin: '782pt',
   breakpointMobile: breakpoints.xs.max,
   breakpointTablet: breakpoints.sm.max,
-  radius: '', // "2px",
+  radius: '.25rem', // "2px",
   unit: '16px',
 }
 

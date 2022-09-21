@@ -55,7 +55,7 @@ const defaultProps = {
   clearable: true,
   className: '',
   disableMatchWidth: false,
-  onDropdownVisibleChange: () => { },
+  onDropdownVisibleChange: () => {},
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -104,7 +104,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       return value.length === 0
     }, [value])
 
-    const { border, borderActive, iconBorder, placeholderColor } = useMemo(
+    const { background, border, borderActive, iconBorder, placeholderColor } = useMemo(
       () => getColors(theme.palette, type),
       [theme.palette, type],
     )
@@ -196,6 +196,9 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       className,
     )
 
+    const roundedCorner = `calc(4 * ${theme.layout.radius}) `
+    const activeCorners = `${roundedCorner} ${roundedCorner} 0 0`
+
     return (
       <SelectContext.Provider value={initialValue}>
         <div
@@ -225,6 +228,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             className={dropdownClassName}
             dropdownStyle={dropdownStyle}
             disableMatchWidth={disableMatchWidth}
+            typeColor={borderActive}
             getPopupContainer={getPopupContainer}>
             {children}
           </SelectDropdown>
@@ -243,14 +247,15 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
               cursor: ${disabled ? 'not-allowed' : 'pointer'};
               max-width: 90vw;
               overflow: hidden;
-              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
-                box-shadow 200ms ease 0s;
+              transition: border 15ms ease-in 0s, color 20ms ease-out 0s,
+                box-shadow 20ms ease 0s;
               border: 1px solid ${border};
-              border-radius: ${theme.layout.radius};
-
+              border-radius: ${roundedCorner};
               background-color: ${disabled
-              ? theme.palette.accents_1
-              : theme.palette.background};
+                ? theme.palette.accents_1
+                : visible
+                ? theme.palette.background
+                : background};
               --select-font-size: ${SCALES.font(0.875)};
               --select-height: ${SCALES.height(2.25)};
               min-width: 11.5em;
@@ -271,6 +276,10 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             .select.active,
             .select:hover {
               border-color: ${disabled ? theme.palette.border : borderActive};
+            }
+
+            .select.active {
+              border-radius: ${visible ? activeCorners : roundedCorner};
             }
 
             .select.active.icon,

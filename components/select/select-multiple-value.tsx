@@ -31,8 +31,8 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
           font-size: var(--select-font-size);
           height: calc(var(--select-font-size) * 2);
           border-radius: ${theme.layout.radius};
-          background-color: ${theme.palette.accents_2};
-          color: ${disabled ? theme.palette.accents_4 : theme.palette.accents_6};
+          background-color: ${theme.palette.accents_4};
+          color: ${disabled ? theme.palette.accents_6 : theme.palette.accents_8};
         }
 
         .item > :global(div:not(.clear-icon)),
@@ -41,7 +41,7 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
           background-color: transparent;
           padding: 0;
           margin: 0;
-          color: inherit;
+          color: ${theme.palette.foreground};
         }
       `}</style>
     </Grid>

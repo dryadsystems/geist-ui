@@ -96,7 +96,7 @@ const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
           color: ${color};
           box-sizing: border-box;
           line-height: 1em;
-          border-radius: ${SCALES.height(0.3125)};
+          border-radius: calc(4 * ${theme.layout.radius});
           font-size: ${SCALES.font(0.875)};
           width: ${SCALES.width(1, 'auto')};
           height: ${SCALES.height(1.75)};

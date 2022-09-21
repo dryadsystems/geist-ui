@@ -2,6 +2,7 @@ import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 
 export type SelectColor = {
+  background: string
   border: string
   borderActive: string
   iconBorder: string
@@ -14,31 +15,36 @@ export const getColors = (
 ): SelectColor => {
   const colors: { [key in NormalTypes]: SelectColor } = {
     default: {
+      background: palette.accents_2,
       border: palette.border,
       borderActive: palette.foreground,
       iconBorder: palette.accents_5,
-      placeholderColor: palette.accents_3,
+      placeholderColor: palette.accents_5,
     },
     secondary: {
+      background: palette.border,
       border: palette.border,
       borderActive: palette.foreground,
       iconBorder: palette.accents_5,
       placeholderColor: palette.accents_3,
     },
     success: {
-      border: palette.successLight,
+      background: palette.successLighter,
+      border: palette.successLighter,
       borderActive: palette.successDark,
       iconBorder: palette.success,
-      placeholderColor: palette.accents_3,
+      placeholderColor: palette.success,
     },
     warning: {
-      border: palette.warningLight,
+      background: palette.warningLighter,
+      border: palette.warningLighter,
       borderActive: palette.warningDark,
       iconBorder: palette.warning,
-      placeholderColor: palette.accents_3,
+      placeholderColor: palette.warning,
     },
     error: {
-      border: palette.errorLight,
+      background: palette.errorLighter,
+      border: palette.errorLighter,
       borderActive: palette.errorDark,
       iconBorder: palette.error,
       placeholderColor: palette.error,

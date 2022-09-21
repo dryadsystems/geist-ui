@@ -37,6 +37,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
     const classes = useClasses(
       'dropdown',
       disableMatchWidth ? 'disable-match' : 'width-match',
+      'partial-border',
     )
 
     if (!parent) return null
@@ -95,13 +96,13 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
 
     if (!el) return null
     return createPortal(
-      <CssTransition visible={visible}>
+      <CssTransition visible={visible} enterTime={5} leaveTime={2}>
         <div className={classes} onClick={clickHandler} onMouseDown={mouseDownHandler}>
           {children}
           <style jsx>{`
             .dropdown {
               position: absolute;
-              top: ${rect.top + 2}px;
+              top: ${rect.top}px;
               left: ${rect.left}px;
               z-index: 1100;
             }
