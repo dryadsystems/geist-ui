@@ -107,7 +107,7 @@ const ButtonComponent = React.forwardRef<
 
     const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
       if (disabled || loading) return
-      const showDrip = !shadow && effect
+      const showDrip = !shadow && !ghost && effect
       /* istanbul ignore next */
       if (showDrip && buttonRef.current) {
         const rect = buttonRef.current.getBoundingClientRect()
@@ -196,17 +196,21 @@ const ButtonComponent = React.forwardRef<
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
-            transform: translate3d(-0.01rem, ${
-              shadow ? '-0.03rem' : '-0.01rem'
-            }, -0.01rem);
+            transform: translate3d(0rem, ${
+              shadow ? '-0.03rem' : disabled ? '0rem' : '-0.01rem'
+            }, ${disabled ? '0rem' : '-0.01rem'});
             transition: transform 100ms ease 0ms; box-shadow 100ms ease 0ms;
           }
 
           .btn:active {
             background-color: ${hover.active};
-            transform: translate3d(0.03rem, ${shadow ? '0.06rem' : '0.03rem'}, 0.03rem);
+            transform: translate3d(0rem, ${
+              shadow ? '0.06rem' : disabled ? '0rem' : '0.03rem'
+            }, ${disabled ? '0rem' : '0.03rem'});
             transition: transform 30ms ease 0ms;
-            box-shadow: inset 0 0 0.03rem 0.03rem ${theme.palette.accents_2};
+            box-shadow: inset 0 0 ${disabled ? '0 0' : '0.03rem 0.03rem'} 
+         #1100111a;
+        };
           }
 
           .btn :global(.text) {

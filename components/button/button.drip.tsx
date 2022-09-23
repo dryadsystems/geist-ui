@@ -58,7 +58,7 @@ const ButtonDrip: React.FC<ButtonDrip> = ({
 
         svg {
           position: absolute;
-          animation: 500ms ease-in expand;
+          animation: 350ms ease-in expand;
           animation-fill-mode: forwards;
           width: 1rem;
           height: 1rem;
