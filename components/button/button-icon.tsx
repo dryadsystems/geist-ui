@@ -37,7 +37,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
           display: flex;
           justify-content: center;
           align-items: center;
-          color: var(--geist-ui-button-color);
+          color: inherit;
           z-index: 1;
         }
 

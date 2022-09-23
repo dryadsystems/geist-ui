@@ -47,7 +47,7 @@ const SliderDot = React.forwardRef<
             line-height: calc(var(--slider-font-size) * 1.25);
             border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: ${theme.palette.success};

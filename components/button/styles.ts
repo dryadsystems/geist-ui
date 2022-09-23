@@ -7,6 +7,7 @@ export interface ButtonColorGroup {
   bg: string
   border: string
   color: string
+  active?: string
 }
 
 export const getButtonGhostColors = (
@@ -16,23 +17,23 @@ export const getButtonGhostColors = (
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
       bg: palette.background,
-      border: palette.foreground,
-      color: palette.foreground,
+      border: palette.accents_7,
+      color: palette.accents_7,
     },
     success: {
       bg: palette.background,
       border: palette.success,
-      color: palette.success,
+      color: palette.successDark,
     },
     warning: {
       bg: palette.background,
-      border: palette.warning,
-      color: palette.warning,
+      border: palette.warningDark,
+      color: palette.warningDark,
     },
     error: {
       bg: palette.background,
       border: palette.error,
-      color: palette.error,
+      color: palette.errorDark,
     },
   }
 
@@ -48,7 +49,7 @@ export const getButtonColors = (
     default: {
       bg: palette.background,
       border: palette.border,
-      color: palette.accents_5,
+      color: palette.accents_7,
     },
     secondary: {
       bg: palette.foreground,
@@ -103,24 +104,28 @@ export const getButtonGhostHoverColors = (
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
-      bg: palette.foreground,
-      border: palette.background,
-      color: palette.background,
+      bg: palette.background,
+      border: palette.foreground,
+      color: palette.foreground,
+      active: palette.accents_7,
     },
     success: {
-      bg: palette.success,
-      border: palette.background,
-      color: 'white',
+      bg: palette.background,
+      border: palette.success,
+      active: palette.successLight,
+      color: palette.successDark,
     },
     warning: {
-      bg: palette.warning,
-      border: palette.background,
-      color: 'white',
+      bg: palette.background,
+      border: palette.warningDark,
+      color: palette.warningDark,
+      active: palette.warningLight,
     },
     error: {
-      bg: palette.error,
-      border: palette.background,
-      color: 'white',
+      bg: palette.background,
+      border: palette.error,
+      color: palette.errorDark,
+      active: palette.errorLight,
     },
   }
   const withoutLightType = type.replace('-light', '') as ButtonTypes
@@ -229,10 +234,12 @@ export const getButtonCursor = (
 }
 
 export const getButtonDripColor = (palette: GeistUIThemesPalette, props: ButtonProps) => {
-  const { type } = props
+  const { type, ghost } = props
   const isLightHover = type!.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)
   return isLightHover
     ? addColorAlpha(hoverColors.bg, 0.65)
+    : ghost && hoverColors.active
+    ? addColorAlpha(hoverColors.active, 0.65)
     : addColorAlpha(palette.accents_2, 0.65)
 }

@@ -128,8 +128,8 @@ const ButtonComponent = React.forwardRef<
       [auto, children, icon, iconRight],
     )
     const [paddingLeft, paddingRight] = [
-      auto ? SCALES.pl(1.15) : SCALES.pl(1.375),
-      auto ? SCALES.pr(1.15) : SCALES.pr(1.375),
+      auto ? SCALES.pl(1.375) : SCALES.pl(1.75),
+      auto ? SCALES.pr(1.375) : SCALES.pr(1.75),
     ]
 
     return (
@@ -196,7 +196,17 @@ const ButtonComponent = React.forwardRef<
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
-            transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
+            transform: translate3d(-0.01rem, ${
+              shadow ? '-0.03rem' : '-0.01rem'
+            }, -0.01rem);
+            transition: transform 100ms ease 0ms; box-shadow 100ms ease 0ms;
+          }
+
+          .btn:active {
+            background-color: ${hover.active};
+            transform: translate3d(0.03rem, ${shadow ? '0.06rem' : '0.03rem'}, 0.03rem);
+            transition: transform 30ms ease 0ms;
+            box-shadow: inset 0 0 0.03rem 0.03rem ${theme.palette.accents_2};
           }
 
           .btn :global(.text) {
