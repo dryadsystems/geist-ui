@@ -75,7 +75,7 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
           padding: 0;
           margin: 0;
           height: 0;
-          overflow: hidden;
+          overflow: ${visible ? 'visible' : 'hidden'};
           visibility: ${visible ? 'visible' : 'hidden'};
           transition: height ${delay}ms ease;
         }
