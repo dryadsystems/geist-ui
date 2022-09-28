@@ -104,7 +104,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       return value.length === 0
     }, [value])
 
-    const { background, border, borderActive, iconBorder, placeholderColor } = useMemo(
+    const { background, border, hover, iconBorder, placeholderColor } = useMemo(
       () => getColors(theme.palette, type),
       [theme.palette, type],
     )
@@ -228,7 +228,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             className={dropdownClassName}
             dropdownStyle={dropdownStyle}
             disableMatchWidth={disableMatchWidth}
-            typeColor={borderActive}
+            typeColor={background}
             getPopupContainer={getPopupContainer}>
             {children}
           </SelectDropdown>
@@ -275,7 +275,9 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
 
             .select.active,
             .select:hover {
-              border-color: ${disabled ? theme.palette.border : borderActive};
+              background-color: ${hover};
+              border: 1px solid ${disabled ? theme.palette.border : hover};
+              box-shadow: ${disabled ? 'none' : `0 0 0 1px ${hover}`};
             }
 
             .select.active {
@@ -284,7 +286,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
 
             .select.active.icon,
             .select:hover .icon {
-              color: ${disabled ? theme.palette.accents_5 : borderActive};
+              color: ${disabled ? theme.palette.accents_5 : hover};
             }
 
             .value {
@@ -294,7 +296,6 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
               align-items: center;
               line-height: 1;
               padding: 0;
-              margin-right: 1.25em;
               font-size: var(--select-font-size);
               color: ${disabled ? theme.palette.accents_4 : theme.palette.foreground};
               width: calc(100% - 1.25em);
