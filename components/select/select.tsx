@@ -171,7 +171,10 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       const [, optionChildren] = pickChildByProps(children, 'value', value)
       return React.Children.map(optionChildren, child => {
         if (!React.isValidElement(child)) return null
-        const el = React.cloneElement(child, { preventAllEvents: true })
+        const _el = React.cloneElement(child, { preventAllEvents: true })
+        // @ts-ignore
+        const el = _el.props.displayName ? _el.props.displayName : _el
+        console.log(el)
         if (!multiple) return el
         return (
           <SelectMultipleValue
@@ -218,7 +221,12 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
               <Ellipsis height="var(--select-height)">{placeholder}</Ellipsis>
             </span>
           )}
-          {value && !multiple && <span className="value">{selectedChild}</span>}
+          {value && !multiple && (
+            <span className="value">
+              {/* @ts-ignore */}
+              {selectedChild}
+            </span>
+          )}
           {value && multiple && (
             <Grid.Container gap={0.5}>{selectedChild}</Grid.Container>
           )}
@@ -232,11 +240,11 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             getPopupContainer={getPopupContainer}>
             {children}
           </SelectDropdown>
-          {/* {!pure && (
+          {!pure && (
             <div className="icon">
-              <Icon />
+              <SelectIcon />
             </div>
-          )} */}
+          )}
           <style jsx>{`
             .select {
               display: inline-flex;
@@ -286,7 +294,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
 
             .select.active.icon,
             .select:hover .icon {
-              color: ${disabled ? theme.palette.accents_5 : hover};
+              color: ${disabled ? theme.palette.accents_5 : iconBorder};
             }
 
             .value {

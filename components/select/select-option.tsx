@@ -8,6 +8,7 @@ import useClasses from '../use-classes'
 
 interface Props {
   value?: string
+  displayName?: string
   disabled?: boolean
   className?: string
   divider?: boolean
@@ -28,6 +29,7 @@ export type SelectOptionProps = Props & NativeAttrs
 
 const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   value: identValue,
+  displayName,
   className,
   children,
   disabled,
