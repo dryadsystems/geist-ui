@@ -64,7 +64,7 @@ export const getButtonColors = (
     warning: {
       bg: palette.warning,
       border: palette.warning,
-      color: palette.accents_5,
+      color: palette.accents_6,
     },
     error: {
       bg: palette.error,
