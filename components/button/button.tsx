@@ -191,7 +191,7 @@ const ButtonComponent = React.forwardRef<
           .btn:hover {
             color: ${hover.color};
             --geist-ui-button-color: ${hover.color};
-            background-color: ${hover.bg};
+            background-color: ${hover.hover};
             border-color: ${hover.border};
             cursor: ${cursor};
             pointer-events: ${events};

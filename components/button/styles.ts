@@ -8,6 +8,7 @@ export interface ButtonColorGroup {
   border: string
   color: string
   active?: string
+  hover?: string
 }
 
 export const getButtonGhostColors = (
@@ -108,24 +109,28 @@ export const getButtonGhostHoverColors = (
       border: palette.foreground,
       color: palette.foreground,
       active: palette.accents_7,
+      hover: palette.accents_5,
     },
     success: {
       bg: palette.background,
       border: palette.success,
       active: palette.successLight,
       color: palette.successDark,
+      hover: palette.successLighter,
     },
     warning: {
       bg: palette.background,
       border: palette.warningDark,
       color: palette.warningDark,
       active: palette.warningLight,
+      hover: palette.warningLighter,
     },
     error: {
       bg: palette.background,
       border: palette.error,
       color: palette.errorDark,
       active: palette.errorLight,
+      hover: palette.errorLighter,
     },
   }
   const withoutLightType = type.replace('-light', '') as ButtonTypes
