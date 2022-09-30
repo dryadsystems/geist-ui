@@ -8,12 +8,13 @@ import useClasses from '../use-classes'
 
 interface Props {
   value?: string
-  displayName?: string
+  displayName?: React.ReactNode
   disabled?: boolean
   className?: string
   divider?: boolean
   label?: boolean
   preventAllEvents?: boolean
+  ellipsis?: boolean
 }
 
 const defaultProps = {
@@ -22,6 +23,7 @@ const defaultProps = {
   label: false,
   className: '',
   preventAllEvents: false,
+  ellipsis: true,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -36,6 +38,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   divider,
   label,
   preventAllEvents,
+  ellipsis,
   ...props
 }: React.PropsWithChildren<SelectOptionProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -82,7 +85,11 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
 
   return (
     <div className={classes} onClick={clickHandler} {...props}>
-      <Ellipsis height={SCALES.height(2.25)}>{children}</Ellipsis>
+      {ellipsis ? (
+        <Ellipsis height={SCALES.height(2.25)}>{children}</Ellipsis>
+      ) : (
+        <>{children}</>
+      )}
       <style jsx>{`
         .option {
           display: flex;

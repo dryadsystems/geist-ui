@@ -3,7 +3,6 @@ import useTheme from '../use-theme'
 import { useSelectContext } from './select-context'
 import Dropdown from '../shared/dropdown'
 import useClasses from '../use-classes'
-import { getRefRect } from '../utils/layouts'
 
 interface Props {
   visible: boolean
@@ -48,8 +47,6 @@ const SelectDropdown = React.forwardRef<
       () => internalDropdownRef.current,
     )
 
-    const parentRect = getRefRect(ref, getPopupContainer)
-
     const roundedCorner = `calc(4 * ${theme.layout.radius}) `
 
     return (
@@ -67,23 +64,10 @@ const SelectDropdown = React.forwardRef<
               border-top: none;
               box-shadow: ${theme.expressiveness.shadowLarge};
               background-color: ${theme.palette.background};
-              max-height: 17em;
               overflow-y: auto;
               overflow-anchor: none;
               padding: 0.38em 0;
               scroll-behavior: smooth;
-              margin-top: -1px;
-            }
-            .select-dropdown::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: calc(100% - ${parentRect.width - 1}px);
-              margin-top: -1px;
-              height: 1px;
-              z-index: 1101;
-              border-top: 1px inset ${typeColor};
             }
           `}</style>
         </div>

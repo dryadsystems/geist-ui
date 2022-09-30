@@ -266,10 +266,10 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
                 : background};
               --select-font-size: ${SCALES.font(0.875)};
               --select-height: ${SCALES.height(2.25)};
-              min-width: 11.5em;
+              min-width: 11.5rem;
               width: ${SCALES.width(1, 'initial')};
               height: var(--select-height);
-              padding: ${SCALES.pt(0)} ${SCALES.pr(0.334)} ${SCALES.pb(0)}
+              padding: ${SCALES.pt(0)} ${SCALES.pr(1.667)} ${SCALES.pb(0)}
                 ${SCALES.pl(0.667)};
               margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
             }

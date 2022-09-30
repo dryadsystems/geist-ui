@@ -17,6 +17,7 @@ const SelectIconComponent: React.FC<unknown> = () => {
           transition: all 200ms ease;
           width: 1.214em;
           height: 1.214em;
+          padding-x: 0.5em;
         }
       `}</style>
     </svg>
