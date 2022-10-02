@@ -33,7 +33,7 @@ const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
   const scale = getScaleProps('scale') as number | undefined
   return (
     <div className={useClasses('user', className)} {...props}>
-      <Avatar src={src} scale={scale} text={text} alt={altText} />
+      <Avatar src={src} scale={scale} text={text} alt={altText}/>
       <div className="names">
         <span className="name">{name}</span>
         <span className="social">{children}</span>
@@ -49,16 +49,17 @@ const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
           font-size: var(--user-font-size);
           width: ${SCALES.width(1, 'max-content')};
           height: ${SCALES.height(1, 'auto')};
-          padding: ${SCALES.pt(0)} ${SCALES.pr(0.5)} ${SCALES.pb(0)} ${SCALES.pl(0.5)};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0.25)} ${SCALES.pb(0)} ${SCALES.pl(0.25)};
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .names {
           font-size: inherit;
-          margin-left: ${theme.layout.gapHalf};
+          margin-left: ${theme.layout.gapQuarter};
           display: inline-flex;
           flex-direction: column;
           white-space: nowrap;
+          overflow: hidden;
         }
 
         .name {

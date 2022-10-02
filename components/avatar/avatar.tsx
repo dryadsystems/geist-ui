@@ -69,6 +69,7 @@ const AvatarComponent: React.FC<AvatarProps> = ({
           height: ${SCALES.height(1.75) || SCALES.width(1.75)};
           padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${marginLeft};
+          flex-shrink: 0;
         }
 
         .avatar-img {
