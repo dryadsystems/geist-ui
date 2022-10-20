@@ -174,7 +174,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
         const _el = React.cloneElement(child, { preventAllEvents: true })
         // @ts-ignore
         const el = _el.props.displayName ? _el.props.displayName : _el
-        console.log(el)
+        // console.log(el)
         if (!multiple) return el
         return (
           <SelectMultipleValue
