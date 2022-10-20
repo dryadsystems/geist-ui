@@ -10,6 +10,7 @@ import { pickChild } from '../utils/collections'
 import useBodyScroll from '../utils/use-body-scroll'
 import useScale, { withScale } from '../use-scale'
 import useKeyboard, { KeyCode } from '../use-keyboard'
+import { ModalExit } from './modal-exit'
 
 interface Props {
   disableBackdropClick?: boolean
@@ -99,10 +100,13 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
         backdropClassName={backdropClassName}
         layerClassName={layerClassName}
         {...bindings}>
-        <ModalWrapper visible={visible} className={wrapClassName}>
-          {withoutActionsChildren}
-          {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
-        </ModalWrapper>
+        <div>
+          <ModalExit visible={visible} onClick={closeFromBackdrop} />
+          <ModalWrapper visible={visible} className={wrapClassName}>
+            {withoutActionsChildren}
+            {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
+          </ModalWrapper>
+        </div>
       </Backdrop>
     </ModalContext.Provider>,
     portal,
