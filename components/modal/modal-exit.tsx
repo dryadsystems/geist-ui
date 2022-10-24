@@ -7,12 +7,11 @@ const X: React.FC<unknown> = () => {
   return (
     <svg
       viewBox="0 0 24 24"
-      strokeWidth="1"
+      strokeWidth="4"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
       shapeRendering="geometricPrecision">
-      <path d="M6 9l6 6 6-6" />
       <path d="M18 6L6 18M6 6l12 12"></path>
       <style jsx>{`
         svg {
@@ -22,6 +21,7 @@ const X: React.FC<unknown> = () => {
           width: 1.214em;
           height: 1.214em;
           padding-x: 0.5em;
+          cursor: pointer;
         }
       `}</style>
     </svg>
